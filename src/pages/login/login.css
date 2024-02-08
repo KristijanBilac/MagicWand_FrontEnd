@@ -1,0 +1,33 @@
+
+
+.card{
+    position:absolute;
+    top: 25%;
+    left: 50%;
+    width: 400px;
+    padding: 0 40px 0px 40px;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+
+}
+
+.card h2 {
+    margin: 0 0 40px;
+    padding: 0;
+    text-align: center;
+}
+
+.user-box{
+    margin: 10px 0 30px;
+    padding: 0;
+    text-align: center;
+}
+
+.button-login{
+    margin: 30px 0 25px;
+    padding: 0;
+    text-align: center;
+}
+
+
