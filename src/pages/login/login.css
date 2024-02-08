@@ -3,7 +3,7 @@
 .card{
     position:absolute;
     top: 25%;
-    left: 50%;
+    left: 45%;
     width: 400px;
     padding: 0 40px 0px 40px;
     box-sizing: border-box;
@@ -30,4 +30,11 @@
     text-align: center;
 }
 
+
+.error{
+    position: relative;
+    top: -15px;
+    font-size: x-small;
+    color: rgb(255, 55, 55);
+}
 

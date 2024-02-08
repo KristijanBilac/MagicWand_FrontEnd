@@ -1,12 +1,13 @@
 import "./App.css";
 import Login from "./pages/login/login.tsx";
-// import Register from "./Register.tsx";
-// import Home from "./Home.tsx";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { PrimeReactProvider } from "primereact/api";
 import "primereact/resources/themes/lara-light-cyan/theme.css";
-import Tablenli from "./pages/table_not_logged_in/table_not_logged_in.tsx";
+import Table from "./pages/table/table.tsx";
 import Table_not_logged_in from "./pages/table_not_logged_in/table_not_logged_in.tsx";
+import Viewdetails from "./pages/veiw_details/viewdetails.tsx"
+
+
 export default function App() {
 
   return (
@@ -25,10 +26,10 @@ export default function App() {
 
                 <div className="content">
                     <Routes>
-                        {/*<Route path="/" element={<Login />} />*/}
-                        {/*<Route path="/table_not_logged_in" element={<Table_not_logged_in />*/}
-                        {/*<Route path="/table_logged_in" element={<Table_logged_in />*/}
-                        {/*<Route path="/update_user" element={<Update_user />} />*/}
+                        <Route path="/" element={<Login />} />
+                        <Route path="/table" element={<Table /> } />
+                        <Route path="/table_not_logged_in" element={<Table_not_logged_in /> } />
+                        <Route path="/viewdetails" element={<Viewdetails />} />
                         {/*<Route path="/home" element={<Home />} />*/}
                         <Route path="*" element={<Login />} />
                     </Routes>

@@ -21,11 +21,12 @@ export default function Login() {
         },
     });
 
+
     const navigate = useNavigate();
 
-    const { register, handleSubmit } = form;
+    const { register, handleSubmit ,formState} = form;
 
-
+    const { errors } = formState;
     const onSubmit = async (data: FormValues) => {
         try {
             console.log("Form submitted", data);
@@ -40,7 +41,7 @@ export default function Login() {
 
             if (response.status === 200) {
                 document.cookie = `token=${response.data.access_token}`;
-                navigate("/table_logged_in");
+                navigate("/table");
             }
         } catch (error) {
             console.error("There was an error!", error);
@@ -68,19 +69,22 @@ export default function Login() {
                                                id="username"/>
                                     <label htmlFor="username">Username</label>
                                 </span>
+                        <p className="error">{errors.username?.message}</p>
                     </div>
 
 
                     <div className="user-box">
                                 <span className="p-float-label">
                                     <InputText
-                                               {...register("password", {
-                                                   required: "Password is required",
-                                               })}
-                                               type="password"
-                                               id="password"/>
+                                        {...register("password", {
+                                            required: "Password is required",
+                                        })}
+                                        type="password"
+                                        id="password"
+                                    />
                                     <label htmlFor="password">Password</label>
                                 </span>
+                        <p className="error">{errors.password?.message}</p>
                     </div>
 
 
@@ -91,7 +95,7 @@ export default function Login() {
 
                     <div className="button-login">
                         <Link to="/table_not_logged_in">
-                           <Button type="button" label="Continue as Guest" text raised/>
+                            <Button type="button" label="Continue as Guest" text raised/>
                         </Link>
                     </div>
 
