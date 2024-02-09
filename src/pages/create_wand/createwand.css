@@ -1,0 +1,6 @@
+.button_block{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+

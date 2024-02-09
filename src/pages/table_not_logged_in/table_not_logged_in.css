@@ -9,10 +9,7 @@
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
     border-radius: 10px;
     text-align: center;
-
 }
-
-
 
 .buttons{
     display: flex;
@@ -21,9 +18,9 @@
 
 }
 
-.button-show-list{
-}
 .button-back-to-login{
+    position: relative;
+    left: 965px;
 }
 
 .table{
@@ -35,4 +32,21 @@
 .inspect-link{
     color: rgba(26, 26, 26, 0.71);
     pointer-events: none;
+}
+
+.loader{
+    position: relative;
+    display: flex;
+    left: 420px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }

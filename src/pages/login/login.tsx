@@ -1,6 +1,6 @@
 import { FieldErrors, useForm } from "react-hook-form";
 import axios from "axios";
-import {Link, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import { Button } from 'primereact/button';
 import {InputText} from "primereact/inputtext";
 import "./login.css"
@@ -41,7 +41,7 @@ export default function Login() {
 
             if (response.status === 200) {
                 document.cookie = `token=${response.data.access_token}`;
-                navigate("/table");
+                navigate("/wand/table/all");
             }
         } catch (error) {
             console.error("There was an error!", error);
@@ -49,11 +49,12 @@ export default function Login() {
     };
     const onError = (errors: FieldErrors<FormValues>) => {
         console.log("Form errors", errors);
+        throw "Error"
     };
 
     return (
 
-        <body>
+        <div className="container">
             <form onSubmit={handleSubmit(onSubmit, onError)} noValidate>
 
                 <Card className="card">
@@ -94,13 +95,11 @@ export default function Login() {
 
 
                     <div className="button-login">
-                        <Link to="/table_not_logged_in">
-                            <Button type="button" label="Continue as Guest" text raised/>
-                        </Link>
+                            <Button type="button" label="Continue as Guest" text raised onClick={() => navigate("/wand/table/part") }/>
                     </div>
 
                 </Card>
             </form>
-        </body>
+        </div>
     );
 }

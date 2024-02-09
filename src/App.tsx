@@ -5,13 +5,13 @@ import { PrimeReactProvider } from "primereact/api";
 import "primereact/resources/themes/lara-light-cyan/theme.css";
 import Table from "./pages/table/table.tsx";
 import Table_not_logged_in from "./pages/table_not_logged_in/table_not_logged_in.tsx";
-import Viewdetails from "./pages/veiw_details/viewdetails.tsx"
+import VeiwDetails from "./pages/view_details/viewdetails.tsx"
+import Createwand from "./pages/create_wand/createwand.tsx";
 
 
 export default function App() {
 
   return (
-        <BrowserRouter>
             <PrimeReactProvider>
 
                 <header>
@@ -23,20 +23,21 @@ export default function App() {
                 </header>
 
                 <body>
-
-                <div className="content">
-                    <Routes>
-                        <Route path="/" element={<Login />} />
-                        <Route path="/table" element={<Table /> } />
-                        <Route path="/table_not_logged_in" element={<Table_not_logged_in /> } />
-                        <Route path="/viewdetails" element={<Viewdetails />} />
-                        {/*<Route path="/home" element={<Home />} />*/}
-                        <Route path="*" element={<Login />} />
-                    </Routes>
-                </div>
+                    <div className="content">
+                        <BrowserRouter>
+                            <Routes>
+                                <Route path="/login" element={<Login />} />
+                                <Route path="/wand/table/all" element={<Table /> } />
+                                <Route path="/wand/table/part" element={<Table_not_logged_in /> } />
+                                <Route path="/wand/details/:id" element={<VeiwDetails />} />
+                                <Route path="/wand/create" element={<Createwand />} />
+                                <Route path="*" element={<Login />} />
+                            </Routes>
+                        </BrowserRouter>
+                    </div>
                 </body>
+
             </PrimeReactProvider>
-        </BrowserRouter>
   )
 }
 

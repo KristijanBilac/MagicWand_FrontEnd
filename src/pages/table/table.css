@@ -12,7 +12,11 @@
 
 }
 
-
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 
 .buttons{
     display: flex;
@@ -23,7 +27,7 @@
 
 .button-show-list{
 }
-.button-back-to-login{
+.button-back-to-login1{
 }
 
 .table{
@@ -34,4 +38,14 @@
 
 .inspect-link1{
     color: rgb(32, 69, 255);
+}
+
+.loader {
+    position: relative;
+    display: flex;
+    left: 420px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 }
